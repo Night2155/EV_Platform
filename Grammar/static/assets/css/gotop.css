@@ -1,0 +1,17 @@
+.gototop {
+    position: fixed;
+    display: none;
+    transition: all 0.2s;
+    left: 20px;
+    bottom: 20px;
+    border-radius: 25%;
+    background: #099999;
+    margin-top: 10px;
+    padding: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.gototop:hover {
+    background: #086969;
+}

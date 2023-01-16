@@ -135,7 +135,55 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Marquee.js" />
     <Content Include="Related_Websites.aspx" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="English_Video_Platform_HomePage.aspx" />
+    <Content Include="static\assets\css\animated.css" />
+    <Content Include="static\assets\css\bootstrap.min.css" />
+    <Content Include="static\assets\css\chatroom.css" />
+    <Content Include="static\assets\css\fontawesome.css" />
+    <Content Include="static\assets\css\gotop.css" />
+    <Content Include="static\assets\css\owl.css" />
+    <Content Include="static\assets\css\pageload.css" />
+    <Content Include="static\assets\css\templatemo-plot-listing.css" />
+    <Content Include="static\assets\css\templatemo-style.css" />
+    <Content Include="static\assets\fonts\flexslider-icon.svg" />
+    <Content Include="static\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="static\assets\fonts\slick.svg" />
+    <Content Include="static\assets\images\ai.png" />
+    <Content Include="static\assets\images\asistente-robot.gif" />
+    <Content Include="static\assets\images\conversation.png" />
+    <Content Include="static\assets\images\demo.jpg" />
+    <Content Include="static\assets\images\dictionary.png" />
+    <Content Include="static\assets\images\grammar.png" />
+    <Content Include="static\assets\images\kitty.png" />
+    <Content Include="static\assets\images\listening.png" />
+    <Content Include="static\assets\images\man.png" />
+    <Content Include="static\assets\images\Writing.png" />
+    <Content Include="static\assets\js\animation.js" />
+    <Content Include="static\assets\js\chatroom.js" />
+    <Content Include="static\assets\js\custom.js" />
+    <Content Include="static\assets\js\gotop.js" />
+    <Content Include="static\assets\js\imagesloaded.js" />
+    <Content Include="static\assets\js\isotope.js" />
+    <Content Include="static\assets\js\keypress.js" />
+    <Content Include="static\assets\js\owl-carousel.js" />
+    <Content Include="static\assets\js\plugins.js" />
+    <Content Include="static\assets\js\ShowVideoOnHomepage.js" />
+    <Content Include="static\assets\js\ShowVideoOnSecondpage.js" />
+    <Content Include="static\assets\js\tabs.js" />
+    <Content Include="static\fontawesome\attribution.js" />
+    <Content Include="static\fontawesome\css\all.min.css" />
+    <Content Include="static\fontawesome\LICENSE.txt" />
+    <Content Include="static\fontawesome\webfonts\fa-brands-400.svg" />
+    <Content Include="static\fontawesome\webfonts\fa-regular-400.svg" />
+    <Content Include="static\fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="static\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="static\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="static\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="static\vendor\jquery\jquery.js" />
+    <Content Include="static\vendor\jquery\jquery.min.js" />
+    <Content Include="static\vendor\jquery\jquery.slim.js" />
+    <Content Include="static\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="English_Video_Platform_All_Video_Page.aspx" />
     <Content Include="Wonderful_Professor.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -257,12 +305,19 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="English_Video_Platform_HomePage.aspx.cs">
+      <DependentUpon>English_Video_Platform_HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="English_Video_Platform_HomePage.aspx.designer.cs">
+      <DependentUpon>English_Video_Platform_HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="English_Video_Platform_All_Video_Page.aspx.cs">
+      <DependentUpon>English_Video_Platform_All_Video_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="English_Video_Platform_All_Video_Page.aspx.designer.cs">
+      <DependentUpon>English_Video_Platform_All_Video_Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Wonderful_Professor.aspx.cs">
       <DependentUpon>Wonderful_Professor.aspx</DependentUpon>
@@ -279,6 +334,34 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="static\assets\fonts\Flaticon.woff" />
+    <Content Include="static\assets\fonts\flexslider-icon.eot" />
+    <Content Include="static\assets\fonts\flexslider-icon.ttf" />
+    <Content Include="static\assets\fonts\flexslider-icon.woff" />
+    <Content Include="static\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="static\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="static\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="static\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="static\assets\fonts\FontAwesome.otf" />
+    <Content Include="static\assets\fonts\slick.eot" />
+    <Content Include="static\assets\fonts\slick.ttf" />
+    <Content Include="static\assets\fonts\slick.woff" />
+    <Content Include="static\fontawesome\webfonts\fa-brands-400.eot" />
+    <Content Include="static\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="static\fontawesome\webfonts\fa-brands-400.woff" />
+    <Content Include="static\fontawesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="static\fontawesome\webfonts\fa-regular-400.eot" />
+    <Content Include="static\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="static\fontawesome\webfonts\fa-regular-400.woff" />
+    <Content Include="static\fontawesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="static\fontawesome\webfonts\fa-solid-900.eot" />
+    <Content Include="static\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="static\fontawesome\webfonts\fa-solid-900.woff" />
+    <Content Include="static\fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="static\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="static\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="static\vendor\jquery\jquery.min.map" />
+    <Content Include="static\vendor\jquery\jquery.slim.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
