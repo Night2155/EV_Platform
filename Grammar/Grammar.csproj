@@ -194,6 +194,7 @@
     <Content Include="static\vendor\jquery\jquery.slim.js" />
     <Content Include="static\vendor\jquery\jquery.slim.min.js" />
     <Content Include="English_Video_Platform_All_Video_Page.aspx" />
+    <Content Include="TestDataBase.aspx" />
     <Content Include="Wonderful_Professor.aspx" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
@@ -328,6 +329,13 @@
     </Compile>
     <Compile Include="English_Video_Platform_All_Video_Page.aspx.designer.cs">
       <DependentUpon>English_Video_Platform_All_Video_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestDataBase.aspx.cs">
+      <DependentUpon>TestDataBase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestDataBase.aspx.designer.cs">
+      <DependentUpon>TestDataBase.aspx</DependentUpon>
     </Compile>
     <Compile Include="Wonderful_Professor.aspx.cs">
       <DependentUpon>Wonderful_Professor.aspx</DependentUpon>
