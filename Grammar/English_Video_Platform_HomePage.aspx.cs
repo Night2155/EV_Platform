@@ -12,10 +12,10 @@ namespace Grammar
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("data source=DESKTOP-O23QA8S/SQLEXPRESS; initial catalog = Vidoe_data;");
+            SqlConnection conn = new SqlConnection("data source=DESKTOP-O23QA8S\\SQLEXPRESS; initial catalog = Video_data; integrated security=true;");
             conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Grammar_Table", conn);
-            SqlDataReader dr = cmd.ExecuteReader();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Grammar_Table", conn);//設定SQL指令
+            SqlDataReader dr = cmd.ExecuteReader(); //執行SQL
             try
             {
                 while (dr.Read())
@@ -29,6 +29,7 @@ namespace Grammar
                 System.Diagnostics.Debug.WriteLine("This will be displayed in output window");
                 dr.Close();
             }
+            conn.Close();
         }
     }
 }
