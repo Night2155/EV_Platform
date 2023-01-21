@@ -15,7 +15,10 @@
                     dataType: 'JSON',
                     success: function (data) {
                         alert("連接資料庫成功!!");
-                        console.log(data);
+                        console.log(data.length)
+                        console.log(data[0]["VideoID"])
+                        console.log(data[0]["Video_Title"])
+                        console.log(data[0]["keywords"])
                     },
                     error: function (err) {
                         alert("連接資料庫失敗!!");

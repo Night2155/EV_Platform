@@ -36,6 +36,7 @@ namespace Grammar
                 Dt.Columns.Add("keywords");
                 while (dataReader.Read()) { // 讀取資料
                     DataRow dataRow = Dt.NewRow(); // 依照剛剛設定的資料表新建一筆空資料行
+                    // 填入資料
                     dataRow["Video_Title"] = dataReader[0].ToString();
                     dataRow["VideoID"] = dataReader[1].ToString();
                     dataRow["keywords"] = dataReader[2].ToString();
