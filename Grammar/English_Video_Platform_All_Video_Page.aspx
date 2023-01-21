@@ -88,26 +88,51 @@
                     <h2 class="col-6 tm-text-primary" id="List_status">All Videos</h2>
                   </div>
                   <div class="row tm-mb-90 tm-gallery" id="video_list">
-                    {% for result in result1 %}
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-                      <figure class="effect-ming tm-video-item">
-                        <img src="https://img.youtube.com/vi/{{result.video_id}}/mqdefault.jpg" alt="Image"
-                          class="img-fluid" />
-                        <figcaption class="d-flex align-items-center justify-content-center">
-                          <h2>watch</h2>
-                          <a href="https://www.youtube.com/watch?v={{result.video_id}}" target="_blank">View more</a>
-                        </figcaption>
-                      </figure>
-                      <div class="d-flex flex-column justify-content-between tm-text-gray">
-                        <span class="titles">
-                          title:<em>{{result.Title}}</em>
-                        </span>
-                        <span class="keywords">
-                          keywords:<em>{{result.keywords}}</em>
-                        </span>
-                      </div>
-                    </div>
-                    {% endfor %}
+                     <script>
+                         //function getViedoData() {
+                         $.ajax({
+                             url: "Connsql_For_EV_AllVideo.aspx",//获取数据的URL
+                             //data: { keyword: keywordValue },
+                             //cache: false,
+                             type: "POST",//HTTP请求方法
+                             dataType: 'JSON',//获取数据执行方式
+                             success: function (data) {
+                                 console.log(data)
+                                 alert("連接資料庫成功!!");
+                                 console.log(data[0].VideoID)
+                                 console.log(data[0].Video_Title)
+                                 console.log(data[0].keywords)
+                                 $(document.getElementsByClassName("row tm-mb-90 tm-gallery")).html("");
+
+                                 for (var i = 0; i < data.length; i++) {
+                                     var top = '<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">';
+                                     var figureclass = '<figure class="effect-ming tm-video-item">';
+
+                                     var img = '<img src="https://img.youtube.com/vi/'+data[i].VideoID + '/mqdefault.jpg" alt="Image"class="img-fluid" />';
+                                     //var img = '<div class="project animate-box" style="background-image:url(' + data[i].img + ');">';
+                                     var figcaption = '<figcaption class="d-flex align-items-center justify-content-center">';
+                                     var watch = '<h2>watch</h2>';
+                                     var url = '<a href="https://www.youtube.com/watch?v='+data[i].VideoID + ' target="_blank">View more</a></figcaption></figure>';
+                                     var divclass = '<div class="d-flex flex-column justify-content-between tm-text-gray">';
+                                     //var poster = '<span calss="poster"><strong>' + data[i].poster + '</strong></span><br />';
+                                     //var posted = '<span calss="posted"><strong>' + data[i].postdate + '</strong></span>';
+                                     //var title = '<h3 class="title">' + data[i].title + '</h3>';
+                                     //var keywords = '<span><strong>Keywords :</strong></span><textarea rows="4" cols="50" style="width:254px; height:40px" maxlength ="100" placeholder = "' + data[i].totalKeyword + '" readonly=""></textarea>';
+                                     //var end = '</a></div></div>'
+                                     var title = '<span calss="titles">title:<strong>'+data[i].Video_Title + '</strong></span>';
+                                     var keyw = '<span class="keywords">keywords: <em>'+data[i].keywords + '</em></span ></div ></div >';
+
+                                     //var abc = top + img + url + poster + posted + title + keywords + end;
+                                     var abc = top + figureclass + img + figcaption + watch + url + divclass + title + keyw;
+                                     $(document.getElementsByClassName("row tm-mb-90 tm-gallery")).append(abc);
+                                 }
+                             },
+                             error: function (err) {
+                                 alert('连接失败');
+                             }
+                         });
+          //}
+                     </script>
                   </div>
                 </div>
               </div>
@@ -116,6 +141,50 @@
         </div>
       </div>
     </div>
+
+     
+
+      <%-- test for conn sql --%>
+       <%--<script>
+           
+               $.ajax({
+                   url: "Connsql_For_EV_AllVideo.aspx",
+                   type: "POST",
+                   dataType: 'JSON',
+                   success: function (data) {
+                       alert("連接資料庫成功!!");
+                       console.log(data.length)
+                       console.log(data[0]["VideoID"])
+                       console.log(data[0]["Video_Title"])
+                       console.log(data[0]["keywords"])
+                   },
+                   error: function (err) {
+                       alert("連接資料庫失敗!!");
+                   }
+               });
+           
+       </script>
+--%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- 頁面選擇鈕 -->
     <!-- <div class="row tm-mb-90">
