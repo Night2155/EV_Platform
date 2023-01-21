@@ -1,16 +1,17 @@
 $(function (){
-  Get_Data("/Grammar_data", "Grammar_List")
-  Get_Data("/Reading_data", "Reading_List")
-  Get_Data("/Writing_data", "Writing_List")
+    Get_Data("Connsql_For_EV_HomePage.aspx", "Grammar_List")
+    Get_Data("Connsql_For_EV_HomePage.aspx", "Reading_List")
+    Get_Data("Connsql_For_EV_HomePage.aspx", "Writing_List")
 });
 function Get_Data(data_Path, data_List){
-  $.ajax({
+$.ajax({
   url: data_Path,
-  type: "GET",
-  dataType: "json",
+  //data: { data_List: data_List },
+  type: "POST",
+  dataType: "JSON",
   success: function (Jdata) {
     // alert("SUCCESS!!!");
-    // console.log(typeof (Jdata));
+    console.log(Jdata);
     $(document.getElementById(data_List)).html('');
     var top = '<div class="item"> <div class="row">';
     var end = '</div> </div>';
@@ -35,23 +36,23 @@ function Pages(Jdata,end,content,Pages,x,y){
   for (var i = x; i < y; i++) {
       var video_image =
           '<a href="https://www.youtube.com/watch?v=' +
-          Jdata[i]["video_id"] +
+          Jdata[i].VideoID +
           '" target = "_blank">' +
           '<img src="https://img.youtube.com/vi/'+
-          Jdata[i]["video_id"] +
+          Jdata[i].VideoID +
           '/mqdefault.jpg" style = "display:block; width:450px; height:250px;" />' +
           '</a>';
       var video_content =
           '<div class="right-content align-self-center">' +
           '<a href="https://www.youtube.com/watch?v='+
-          Jdata[i]["video_id"] + '"target = "_blank">' +
+          Jdata[i].VideoID + '"target = "_blank">' +
           '<h5>'+
-          Jdata[i]["Title"] +
+          Jdata[i].Video_Title +
           '</h5></a>'+
           '<span class="details">' +
           'Keywords: ' +
           '<em>' +
-          Jdata[i]["keywords"] +
+          Jdata[i].keywords +
           '</em></span></div>';
 
       if (i == 0 || i == 6 || i == 13){
