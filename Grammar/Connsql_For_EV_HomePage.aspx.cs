@@ -13,6 +13,9 @@ namespace Grammar
     {
         DataTable Dt = new DataTable(); // 回傳給前端的資料表
         string a = "123";
+        //string Grammar_sql = "SELECT TOP 5 Video_Title,VideoID,keywords FROM Grammar_Table ORDER BY NEWID()";
+        //string Reading_sql = "SELECT TOP 5 Video_Title,VideoID,keywords FROM Reading_Table ORDER BY NEWID()";
+        //string Writing_sql = "SELECT TOP 5 Video_Title,VideoID,keywords FROM Writing_Table ORDER BY NEWID()";
         protected void Page_Load(object sender, EventArgs e)
         {
             GetData();
@@ -26,7 +29,7 @@ namespace Grammar
             SqlConnection conn = new SqlConnection("data source=DESKTOP-O23QA8S\\SQLEXPRESS; initial catalog = Video_data; integrated security=true;");
             //打開連接
             conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT TOP 5 Video_Title,VideoID,keywords FROM Grammar_Table", conn);//設定SQL指令
+            SqlCommand cmd = new SqlCommand("SELECT TOP 18 Video_Title,VideoID,keywords FROM Grammar_Table ORDER BY NEWID()", conn);//設定SQL指令
             SqlDataReader dataReader = cmd.ExecuteReader(); //執行SQL
             if (dataReader.HasRows) { //是否有成功抓取資料
                 // 設定資料表行列

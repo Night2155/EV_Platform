@@ -1,4 +1,4 @@
-function AskDataFromServer(){
+function AskDataFromServer() {
     var keyword = $(document.getElementById("search_bar")).val()
     if (keyword == ""){
         alert("請輸入關鍵字");
