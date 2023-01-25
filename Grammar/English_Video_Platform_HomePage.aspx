@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="zh-tw">
-<head>
+<head runat="server">
   <meta charset="UTF-8" />
   <title>英文教學小助手</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="/static/assets/css/templatemo-plot-listing.css" />
   <link rel="stylesheet" href="/static/assets/css/animated.css" />
   <link rel="stylesheet" href="/static/assets/css/owl.css" />
+
   <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/static/fontawesome/css/all.min.css" />
   <link rel="stylesheet" href="/static/assets/css/templatemo-style.css" />

@@ -12,37 +12,12 @@ namespace Grammar
     public partial class WebForm3 : System.Web.UI.Page
     {
         DataTable Dt = new DataTable(); // 回傳給前端的資料表
-        string Grammar_sql = "SELECT TOP 18 Video_Title,VideoID,keywords FROM Grammar_Table ORDER BY NEWID()";
-        string Reading_sql = "SELECT TOP 18 Video_Title,VideoID,keywords FROM Reading_Table ORDER BY NEWID()";
-        string Writing_sql = "SELECT TOP 18 Video_Title,VideoID,keywords FROM Writing_Table ORDER BY NEWID()";
         protected void Page_Load(object sender, EventArgs e)
         {
-            string data_List = Request.Form["data_List"];
-            if (data_List == "Grammar_List") {
-                GetData(Grammar_sql);
-                string datatojson = ConvertDataTableToJson(Dt);//轉換成JSON格式
-                Response.Write(datatojson); // 傳到前端
-                Response.End();
-            }
-            if (data_List == "Reading_List")
-            {
-                GetData(Reading_sql);
-                string datatojson = ConvertDataTableToJson(Dt);//轉換成JSON格式
-                Response.Write(datatojson); // 傳到前端
-                Response.End();
-            }
-            if (data_List == "Writing_List")
-            {
-                GetData(Writing_sql);
-                string datatojson = ConvertDataTableToJson(Dt);//轉換成JSON格式
-                Response.Write(datatojson); // 傳到前端
-                Response.End();
-            }
-            //GetData(sql);
-            
-
+            GetData();
+            DataToFront(); 
         }
-        public void GetData(string sql) { // 跟資料庫要資料
+        public void GetData() { // 跟資料庫要資料
             //建立資料庫連接
             //SqlConnection conn = new SqlConnection("data source=LAPTOP-J71QGUGU\\SQLEXPRESS; initial catalog =Video_data;integrated security=True");
             SqlConnection conn = new SqlConnection("data source=DESKTOP-O23QA8S\\SQLEXPRESS; initial catalog = Video_data; integrated security=true;");
@@ -66,8 +41,14 @@ namespace Grammar
                 }
             }
             conn.Close();
+            DataToFront();
         }
-        
+        public void DataToFront() { 
+            string datatojson = ConvertDataTableToJson(Dt);
+            Response.Write(datatojson);
+            Dt.Clear();
+            Response.End();
+        }
         public string ConvertDataTableToJson(DataTable dt)
         {
             string json = JsonConvert.SerializeObject(dt, Formatting.Indented);

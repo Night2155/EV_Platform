@@ -111,6 +111,7 @@
     <Content Include="bot.js" />
     <Content Include="Bot_AIML.aspx" />
     <Content Include="Connsql_For_EV_AllVideo.aspx" />
+    <Content Include="Connsql_Writing_List.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -194,7 +195,8 @@
     <Content Include="static\vendor\jquery\jquery.slim.js" />
     <Content Include="static\vendor\jquery\jquery.slim.min.js" />
     <Content Include="English_Video_Platform_All_Video_Page.aspx" />
-    <Content Include="Connsql_For_EV_HomePage.aspx" />
+    <Content Include="Connsql_Grammar_List.aspx" />
+    <Content Include="Connsql_Reading_List.aspx" />
     <Content Include="Wonderful_Professor.aspx" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
@@ -263,6 +265,13 @@
     <Compile Include="Connsql_For_EV_AllVideo.aspx.designer.cs">
       <DependentUpon>Connsql_For_EV_AllVideo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Connsql_Writing_List.aspx.cs">
+      <DependentUpon>Connsql_Writing_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Connsql_Writing_List.aspx.designer.cs">
+      <DependentUpon>Connsql_Writing_List.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -330,12 +339,19 @@
     <Compile Include="English_Video_Platform_All_Video_Page.aspx.designer.cs">
       <DependentUpon>English_Video_Platform_All_Video_Page.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Connsql_For_EV_HomePage.aspx.cs">
-      <DependentUpon>Connsql_For_EV_HomePage.aspx</DependentUpon>
+    <Compile Include="Connsql_Grammar_List.aspx.cs">
+      <DependentUpon>Connsql_Grammar_List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Connsql_For_EV_HomePage.aspx.designer.cs">
-      <DependentUpon>Connsql_For_EV_HomePage.aspx</DependentUpon>
+    <Compile Include="Connsql_Grammar_List.aspx.designer.cs">
+      <DependentUpon>Connsql_Grammar_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connsql_Reading_List.aspx.cs">
+      <DependentUpon>Connsql_Reading_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Connsql_Reading_List.aspx.designer.cs">
+      <DependentUpon>Connsql_Reading_List.aspx</DependentUpon>
     </Compile>
     <Compile Include="Wonderful_Professor.aspx.cs">
       <DependentUpon>Wonderful_Professor.aspx</DependentUpon>

@@ -1,25 +1,25 @@
-$(function (){
-    Get_Data("Connsql_For_EV_HomePage.aspx", "Grammar_List")
-    Get_Data("Connsql_For_EV_HomePage.aspx", "Reading_List")
-    Get_Data("Connsql_For_EV_HomePage.aspx", "Writing_List")
+$(function () {
+    Get_Data("Connsql_Grammar_List.aspx","Grammar_List")
+    Get_Data("Connsql_Reading_List.aspx","Reading_List")
+    Get_Data("Connsql_Writing_List.aspx","Writing_List")
 });
-function Get_Data(data_Path, data_List){
-$.ajax({
-  url: data_Path,
-  //data: { data_List: data_List },
+function Get_Data(data_url,data_List){
+    $.ajax({
+        url: data_url,
+        cache: false,
   type: "POST",
-  dataType: "JSON",
-  success: function (Jdata) {
+  dataType: 'JSON',
+  success: function (data) {
     // alert("SUCCESS!!!");
-    console.log(Jdata);
+    console.log(data);
     $(document.getElementById(data_List)).html('');
     var top = '<div class="item"> <div class="row">';
     var end = '</div> </div>';
     var content = '<div class="col-lg-12"> <div class="listing-item">'
     var Page1,Page2,Page3
-    Page1 = Pages(Jdata,end,content, Page1,0,6)
-    Page2 = Pages(Jdata,end,content, Page2,6,13)
-    Page3 = Pages(Jdata,end,content, Page3,13,18)
+    Page1 = Pages(data,end,content, Page1,0,6)
+    Page2 = Pages(data,end,content, Page2,6,13)
+    Page3 = Pages(data,end,content, Page3,13,18)
     var result1 = top + Page1 + end
     var result2 = top + Page2 + end
     var result3 = top + Page3 + end
@@ -27,7 +27,8 @@ $.ajax({
     $(document.getElementById(data_List)).append(result);
   },
   error: function () {
-    // alert("ERROR!!!");-
+      // alert("ERROR!!!");
+      console.log(data_List);
     console.log("傳遞資料錯誤");
   },
 });
