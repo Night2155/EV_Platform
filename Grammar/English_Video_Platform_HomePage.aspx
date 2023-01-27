@@ -58,7 +58,7 @@
           </li>
           <li class="nav-item">
             <!--第二頁顯示全部的影片-->
-            <a class="nav-link nav-link-2" href="/SecondPage" methods="post">All Videos</a>
+            <a class="nav-link nav-link-2" href="/English_Video_Platform_All_Video_Page" methods="post">All Videos</a>
           </li>
         </ul>
       </div>
