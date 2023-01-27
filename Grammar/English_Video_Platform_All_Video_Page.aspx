@@ -434,7 +434,7 @@
   <script src="/static/assets/js/gotop.js"></script>
   <script src="/static/assets/js/ShowVideoOnSecondpage.js"></script>
   <script src="/static/assets/js/keypress.js"></script>
-  <!--    <script src="/static/js/ShowVideoOnHomepage.js"></script>-->
+  <script src="/static/js/ShowVideoOnHomepage.js"></script>
   <script>
     $(window).on("load", function () {
       $("body").addClass("loaded");

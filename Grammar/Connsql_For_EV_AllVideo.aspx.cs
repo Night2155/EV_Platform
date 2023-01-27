@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using Newtonsoft.Json;
+using System.Configuration;
 
 namespace Grammar
 {
@@ -24,6 +25,7 @@ namespace Grammar
         {
             //建立連接
             SqlConnection conn = new SqlConnection("data source=LAPTOP-J71QGUGU\\SQLEXPRESS; initial catalog =Video_data;integrated security=true");
+            //SqlConnection conn =new SqlConnection(ConfigurationManager.AppSettings["MSSQL_DBconnect"]);
             //打開連接
             conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT Video_Title,VideoID,keywords FROM Grammar_Table", conn);
