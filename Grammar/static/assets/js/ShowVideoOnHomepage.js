@@ -1,12 +1,15 @@
 $(function () {
-    Get_Data("Connsql_Grammar_List.aspx","Grammar_List")
-    Get_Data("Connsql_Reading_List.aspx","Reading_List")
-    Get_Data("Connsql_Writing_List.aspx","Writing_List")
+    Get_Data("Grammar_Table","Grammar_List")
+    Get_Data("Reading_Table","Reading_List")
+    Get_Data("Writing_Table","Writing_List")
 });
-function Get_Data(data_url,data_List){
+function Get_Data(data,data_List){
     $.ajax({
-        url: data_url,
+        url: "Connsql_HomePage",
         cache: false,
+        data: {
+            "keyword": data
+        },
   type: "POST",
   dataType: 'JSON',
   success: function (data) {

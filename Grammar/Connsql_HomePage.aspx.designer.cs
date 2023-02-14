@@ -11,7 +11,7 @@ namespace Grammar
 {
 
 
-    public partial class WebForm4
+    public partial class Connsql_HomePage
     {
     }
 }
