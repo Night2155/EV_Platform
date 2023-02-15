@@ -147,6 +147,7 @@
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <Content Include="SearchAllVideo.aspx" />
     <Content Include="static\assets\css\animated.css" />
     <Content Include="static\assets\css\bootstrap.min.css" />
     <Content Include="static\assets\css\chatroom.css" />
@@ -301,6 +302,13 @@
     </Compile>
     <Compile Include="search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchAllVideo.aspx.cs">
+      <DependentUpon>SearchAllVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchAllVideo.aspx.designer.cs">
+      <DependentUpon>SearchAllVideo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

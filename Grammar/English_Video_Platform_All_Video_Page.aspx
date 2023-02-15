@@ -70,7 +70,7 @@
     style="background-image: url(/static/assets/images/demo.jpg)">
 <!--    <form class="d-flex tm-search-form">-->
       <input class="form-control tm-search-input" id="search_bar" type="search" placeholder="Search" aria-label="Search" />
-      <button class="btn btn-outline-success tm-search-btn" id="search_btn" type="submit" onclick="AskDataFromServer()">
+      <button class="btn btn-outline-success tm-search-btn" id="search_btn" type="submit" onclick="Ask()">
         <i class="fas fa-search"></i>
       </button>
 <!--    </form>-->
@@ -98,7 +98,7 @@
                              dataType: 'JSON',//获取数据执行方式
                              success: function (data) {
                                  console.log(data)
-                                 alert("連接資料庫成功!!");
+                                 //alert("連接資料庫成功!!");
                                  console.log(data[0].VideoID)
                                  console.log(data[0].Video_Title)
                                  console.log(data[0].keywords)
@@ -141,6 +141,74 @@
         </div>
       </div>
     </div>
+
+
+<script>
+      function Ask() {
+    var keyword = $(document.getElementById("search_bar")).val()
+    if (keyword == ""){
+        alert("請輸入關鍵字");
+    }
+    else{
+        $.ajax({
+            url: "SearchAllVideo",
+            type: "POST",
+            dataType: "json",
+            data:{
+                "keyword": keyword,
+            },
+            success: function (data){
+                console.log(data)
+                if (data.length > 0) {
+                    $(document.getElementById("video_list")).html("");
+                    for(var i = 0; i < data.length; i++){
+                        //var top = '{% for result in '+ data +' %}';
+                        //var content =
+                        //    '<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">' +
+                        //    '<figure class="effect-ming tm-video-item">' +
+                        //    '<img src="https://img.youtube.com/vi/' + data[i].VideoID +'/mqdefault.jpg" alt="Image" class="img-fluid" />' +
+                        //    '<figcaption class="d-flex align-items-center justify-content-center">' +
+                        //    '<h2>watch</h2>' +
+                        //    '<a href="https://www.youtube.com/watch?v=' + data[i].VideoID +'" target="_blank">View more</a>' +
+                        //    '</figcaption></figure>' +
+                        //    '<div class="d-flex flex-column justify-content-between tm-text-gray">' +
+                        //    '<span class="titles"> Title:<em>' + data[i].Video_Title + '</em> </span>' +
+                        //    '<span class="keywords"> Keywords:<em>' + data[i].keywords + '</em> </span>' +
+                        //    '</div> </div>';
+                        // var end = '{% endfor %}'
+                        var top = '<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">';
+                        var figureclass = '<figure class="effect-ming tm-video-item">';
+                        var img = '<img src="https://img.youtube.com/vi/' + data[i].VideoID + '/mqdefault.jpg" alt="Image" class="img-fluid" />';
+                        var figcaption='<figcaption class="d-flex align-items-center justify-content-center">';
+                        var watch = '<h2>watch</h2>';
+                        var url = '<a href="https://www.youtube.com/watch?v=' + data[i].VideoID + '" target="_blank">View more</a></figcaption></figure >';
+                        var divclass = '<div class="d-flex flex-column justify-content-between tm-text-gray">';
+                        var title = '<span calss="titles">title:<strong>' + data[i].Video_Title + '</strong></span>';
+                        var keyw = '<span class="keywords">keywords: <em>' + data[i].keywords + '</em></span ></div ></div >';
+                        var abc = top + figureclass + img + figcaption + watch + url + divclass + title + keyw;
+                        $(document.getElementById("video_list")).append(abc)
+                        result = "共" + data.length + "部影片 關鍵字: " + $("#search_bar").val()
+                        $("#List_status").html(result);
+                    };
+
+                }else {
+                    $(document.getElementById("video_list")).html("");
+                    result = "查無此關鍵字 請重新搜尋"
+                    $("#List_status").html(result);
+                    }
+            },
+            error: function (error) {
+                alert("error");
+            },
+        });
+    }
+
+}
+
+</script>
+
+
+
 
      
 
