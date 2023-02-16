@@ -379,8 +379,8 @@
         // Robot Message 機器人聊天氣泡
         $.ajax({
           type: "POST",
-          url: "/robot",
-          data: { user_Text: user_Text },
+          url: "Bot_AIML",
+          data: { "user_Text": user_Text },
           success: function (data) {
             console.log(data);
             if (data == "") {

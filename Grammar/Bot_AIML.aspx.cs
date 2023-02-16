@@ -12,7 +12,7 @@ namespace Grammar
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string message = Request.Form["Message"];
+            string message = Request.Form["user_Text"];
             const string UserID = "user";
             Bot AimlBot = new Bot();
             User MyUser = new User(UserID, AimlBot);
