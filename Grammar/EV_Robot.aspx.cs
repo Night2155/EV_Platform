@@ -5,24 +5,27 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using AIMLbot;
-
 namespace Grammar
 {
-    public partial class Bot_AIML : System.Web.UI.Page
+    public partial class EV_Robot : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string message = Request.Form["message"];
+            string message = Request.Form["user_Text"];
             const string UserID = "user";
             Bot AimlBot = new Bot();
             User MyUser = new User(UserID, AimlBot);
 
             // 初始化從AIML資料夾取出AIML檔案
             //AimlBot.loadSettings(@"D:\大專生new\Grammar\Grammar\bin\config\Settings.xml");
-            string test = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"bin\config\Settings.xml";
+            //C:\Users\09765\Source\Repos\Night2155\EV_Platform\Grammar\bin\config\EV_Setting.xml
+            string test = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
             test = test.Replace("\\", @"\");
-            AimlBot.loadSettings(test);
-
+            string path = @"bin\config\EV_Setting.xml";
+            path = System.IO.Path.Combine(test,path);
+            
+            AimlBot.loadSettings(path);
+            
             AimlBot.isAcceptingUserInput = false;
             AimlBot.loadAIMLFromFiles();
             AimlBot.isAcceptingUserInput = true;
