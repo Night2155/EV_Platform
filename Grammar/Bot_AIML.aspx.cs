@@ -22,6 +22,7 @@ namespace Grammar
             string test = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"bin\config\Settings.xml";
             test = test.Replace("\\", @"\");
             AimlBot.loadSettings(test);
+            
 
             AimlBot.isAcceptingUserInput = false;
             AimlBot.loadAIMLFromFiles();

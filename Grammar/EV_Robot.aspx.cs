@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using AIMLbot;
+using System.IO;
 namespace Grammar
 {
     public partial class EV_Robot : System.Web.UI.Page
@@ -21,10 +22,10 @@ namespace Grammar
             //C:\Users\09765\Source\Repos\Night2155\EV_Platform\Grammar\bin\config\EV_Setting.xml
             string test = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
             test = test.Replace("\\", @"\");
-            string path = @"bin\config\EV_Setting.xml";
-            path = System.IO.Path.Combine(test,path);
+            string path = Path.Combine(Environment.CurrentDirectory, Path.Combine("config", "Settings.xml"));
+            //path = System.IO.Path.Combine(test,path);
             
-            AimlBot.loadSettings(path);
+            AimlBot.loadSettings(Path.Combine(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase, Path.Combine("bin/config","Settings.xml")));
             
             AimlBot.isAcceptingUserInput = false;
             AimlBot.loadAIMLFromFiles();
