@@ -56,11 +56,11 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link nav-link-1" href="/">HomePage</a>
+            <a class="nav-link nav-link-1" href="English_Video_Platform_HomePage">HomePage</a>
           </li>
           <li class="nav-item">
             <!--第二頁顯示全部的影片-->
-            <a class="nav-link nav-link-2 active" aria-current="page" href="/SecondPage">All Videos</a>
+            <a class="nav-link nav-link-2 active" aria-current="page" href="English_Video_Platform_All_Video_Page">All Videos</a>
           </li>
         </ul>
       </div>
@@ -86,7 +86,7 @@
               <div class="grid">
                 <div class="container-fluid tm-container-content tm-mt-60">
                   <div class="row mb-4">
-                    <h2 class="col-6 tm-text-primary" id="List_status">語音辨識</h2>
+                    <h2 class="col-6 tm-text-primary" id="List_status">聽力練習</h2>
                   </div>
                   <div class="row tm-mb-90 tm-gallery" id="video_list">
                       <!-- STT -->
@@ -96,34 +96,48 @@
                         <option value="Microsoft Libby Online (Natural) - English (United Kingdom)">英式發音</option>--%>
                       </select>
                       <div>
-                        <textarea name="text">Change text in this text area</textarea>
-                        <button id="stop">Stop!</button>
-                        <button id="speak">Speak</button>
+                          <br />
+                        <textarea name="text" style="resize:none;overflow:auto; width:100%;height:300px;"  onkeyup="autogrow(this);"placeholder="您好!請先選擇您想聆聽的口音，並在這裡輸入英語對話"></textarea>
+                          
+                          <%--js for autochange textarea size--%> 
+                          <script type="text/javascript">
+
+                              function autogrow(textarea) {
+                                  var adjustedHeight = textarea.clientHeight;
+
+                                  adjustedHeight = Math.max(textarea.scrollHeight, adjustedHeight);
+                                  if (adjustedHeight > textarea.clientHeight) {
+                                      textarea.style.height = adjustedHeight + 'px';
+                                  } else {
+                                      textarea.style.height = '300px';
+                                  }
+                              }
+                          </script>
+
+
+
+                      </div>
+                      <div style="text-align:center;">
+                        <button id="stop">停止</button>
+                        <button id="speak">發音</button>
                       </div>
 
                   </div>
                     <!--TTS-->
-                    <input id="toggle" type="button" value="Start Speech Recognition" onclick="toggleSpeechRecognition();"/>
-                    <input id="clear" type="button" value="Clear Contents" onclick="clearContainer('Confirm to clear Contents？');"/>
+                    <div class="row mb-4">
+                    <h2 class="col-6 tm-text-primary" >發音練習</h2>
+                  </div>
+                    <div>
+                            
+                            <%--<td><textarea id="bufferContainer" rows="1" cols="1" readonly="readonly" style="border: 1px solid #000000; width: 100%; height: 500px; resize: vertical;"></textarea></td>--%>
+                            <textarea id="resultContainer"  style="border: 1px solid #000000; width: 100%; height: 500px; resize: none;" placeholder="請點選下方按鈕來練習發音，這個文字框將顯示您發音的結果。"></textarea>
+                        
+                    </div>
                     
-                    <table width="100%">
-                        <colgroup>
-                            <col width="50%"/>
-                            <col width="50%"/>
-                        </colgroup>
-                    <thead>
-                        <tr>
-                            <th><input type="button" value="Select all Temporary Contents" onclick="selectAllText(document.getElementById('bufferContainer'));"/></th>
-                            <th><input type="button" value="Select all Out Contents" onclick="selectAllText(document.getElementById('resultContainer'));"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr valign="top">
-                            <td><textarea id="bufferContainer" rows="1" cols="1" readonly="readonly" style="border: 1px solid #000000; width: 100%; height: 500px; resize: vertical;"></textarea></td>
-                            <td><textarea id="resultContainer" rows="1" cols="1" style="border: 1px solid #000000; width: 100%; height: 500px; resize: vertical;"></textarea></td>
-                        </tr>
-                    </tbody>
-                    </table>
+                    <div style="text-align:center;">
+                        <input id="toggle" type="button" value="開始辨識您的美聲" onclick="toggleSpeechRecognition();"/>
+                        <input id="clear" type="button" value="清除對話框" onclick="clearContainer('確定要清除對話框嗎？');"/>
+                    </div>
 
                 </div>
               </div>
@@ -426,7 +440,7 @@
              speechRecognition.interimResults = true;
              speechRecognition.addEventListener("start", function () {
                  //更改按鈕value
-                 document.getElementById("toggle").value = "Stop Speech Recognition";
+                 document.getElementById("toggle").value = "暫停辨識";
              });
              speechRecognition.addEventListener("result", function (event) {
                  //console.log('event =', event);
@@ -471,7 +485,7 @@
                  //if (toggle.value == "Stop Speech Recognition" && autoResume.checked) {
                  //    this.start();
                  //}
-                 if (toggle.value == "Stop Speech Recognition") {
+                 if (toggle.value == "暫停辨識") {
                      this.start();
                  }
              });
@@ -481,8 +495,8 @@
      function toggleSpeechRecognition() {
          if (SpeechRecognition) {
              var toggle = document.getElementById("toggle");
-             if (toggle.value == "Stop Speech Recognition") {
-                 toggle.value = "Start Speech Recognition";
+             if (toggle.value == "暫停辨識") {
+                 toggle.value = "開始辨識您的美聲";
                  speechRecognition.stop();
              } else {
                  //speechRecognition.lang = document.getElementById("language").value;
@@ -499,13 +513,14 @@
      }
 
      function clearAllText(element) {
-         element.value = "";
+         element.text = "";
      }
 
      function clearContainer(message) {
          if (window.confirm(message)) {
-             clearAllText(document.getElementById('bufferContainer'));
-             clearAllText(document.getElementById('resultContainer'));
+             //clearAllText(document.getElementById('bufferContainer'));
+             //clearAllText(document.getElementById('resultContainer'));
+             document.getElementById('resultContainer').value = "";
          }
      }
 
@@ -520,6 +535,10 @@
         const msg = new SpeechSynthesisUtterance();
         //const textbox= document.querySelector('#te')
         const speakButton = document.querySelector('#speak');
+        const stopButton = document.querySelector('#stop');
+
+        //msg["Microsoft Aria Online(Natural) - English(United States)"];
+        msg.lang = "en-US";
 
         // 播放語音的函式
         function toggle() {
@@ -552,9 +571,10 @@
         speechSynthesis.addEventListener('voiceschanged', populateVoices);
         function setVoice() {
             msg.voice = voices.find(voice => voice.name === this.value);
+            console.log(this.value);
             console.log(msg.voice);
             // 設定完就播放
-            toggle();
+            //toggle();
         }
 
         voicesDropdown.addEventListener('change', setVoice);
@@ -562,8 +582,9 @@
         const options = document.querySelectorAll('[type="range"], [name="text"]');
 
         function setOption() {
+            
             msg[this.name] = this.value;
-            toggle();
+            //toggle();
         }
 
         options.forEach(option => option.addEventListener('change', setOption));

@@ -55,11 +55,11 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link nav-link-1" href="/">HomePage</a>
+            <a class="nav-link nav-link-1" href="English_Video_Platform_HomePage">HomePage</a>
           </li>
           <li class="nav-item">
             <!--第二頁顯示全部的影片-->
-            <a class="nav-link nav-link-2 active" aria-current="page" href="/SecondPage">All Videos</a>
+            <a class="nav-link nav-link-2 active" aria-current="page" href="English_Video_Platform_All_Video_Page">All Videos</a>
           </li>
         </ul>
       </div>
