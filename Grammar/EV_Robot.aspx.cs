@@ -12,20 +12,22 @@ namespace Grammar
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string message = Request.Form["user_Text"];
+            //string message = Request.Form["user_Text"];
+            string message = "Hello";
             const string UserID = "user";
             Bot AimlBot = new Bot();
+
             User MyUser = new User(UserID, AimlBot);
 
             // 初始化從AIML資料夾取出AIML檔案
             //AimlBot.loadSettings(@"D:\大專生new\Grammar\Grammar\bin\config\Settings.xml");
             //C:\Users\09765\Source\Repos\Night2155\EV_Platform\Grammar\bin\config\EV_Setting.xml
-            string test = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
-            test = test.Replace("\\", @"\");
-            string path = Path.Combine(Environment.CurrentDirectory, Path.Combine("config", "Settings.xml"));
-            //path = System.IO.Path.Combine(test,path);
+            //string test = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
+            //test = test.Replace("\\", @"\");
+            string path = Path.Combine(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase, @"bin\config\Settings.xml");
+            path.Replace("\\", @"\");
             
-            AimlBot.loadSettings(Path.Combine(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase, Path.Combine("bin/config","Settings.xml")));
+            AimlBot.loadSettings(path);
             
             AimlBot.isAcceptingUserInput = false;
             AimlBot.loadAIMLFromFiles();

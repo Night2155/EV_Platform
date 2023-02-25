@@ -60,6 +60,10 @@
             <!--第二頁顯示全部的影片-->
             <a class="nav-link nav-link-2" href="/English_Video_Platform_All_Video_Page" methods="post">All Videos</a>
           </li>
+          <li class="nav-item">
+            <!--語音辨識-->
+            <a class="nav-link nav-link-2" href="/Speechtest" methods="post">Speech Recognition</a>
+          </li>
         </ul>
       </div>
     </div>
