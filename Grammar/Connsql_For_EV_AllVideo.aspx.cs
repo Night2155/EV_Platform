@@ -19,12 +19,14 @@ namespace Grammar
             AllData();
             string datatojson = ConvertDataTableToJson(dt);//轉換成JSON格式
             Response.Write(datatojson); // 傳到前端
+            dt.Clear();
             Response.End();
         }
         public void AllData()
         {
             //建立連接
-            SqlConnection conn = new SqlConnection("data source=LAPTOP-J71QGUGU\\SQLEXPRESS; initial catalog =Video_data;integrated security=true");
+            //SqlConnection conn = new SqlConnection("data source=LAPTOP-J71QGUGU\\SQLEXPRESS; initial catalog =Video_data;integrated security=true");
+            SqlConnection conn = new SqlConnection("data source=DESKTOP-GPKL4Q4\\SQLEXPRESS; initial catalog =Video_data;integrated security=True");
             //SqlConnection conn =new SqlConnection(ConfigurationManager.AppSettings["MSSQL_DBconnect"]);
             //打開連接
             conn.Open();

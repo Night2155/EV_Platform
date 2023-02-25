@@ -112,11 +112,11 @@
                                      var top = '<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">';
                                      var figureclass = '<figure class="effect-ming tm-video-item">';
 
-                                     var img = '<img src="https://img.youtube.com/vi/'+data[i].VideoID + '/mqdefault.jpg" alt="Image"class="img-fluid" />';
+                                     var img = '<img src="https://img.youtube.com/vi/' + data[i].VideoID + '/mqdefault.jpg" alt="Image"class="img-fluid" />';
                                      //var img = '<div class="project animate-box" style="background-image:url(' + data[i].img + ');">';
                                      var figcaption = '<figcaption class="d-flex align-items-center justify-content-center">';
                                      var watch = '<h2>watch</h2>';
-                                     var url = '<a href="https://www.youtube.com/watch?v='+data[i].VideoID + ' target="_blank">View more</a></figcaption></figure>';
+                                     var url = '<a href="https://www.youtube.com/watch?v=' + data[i].VideoID + '" target="_blank"' + '>View more</a></figcaption></figure>';
                                      var divclass = '<div class="d-flex flex-column justify-content-between tm-text-gray">';
                                      //var poster = '<span calss="poster"><strong>' + data[i].poster + '</strong></span><br />';
                                      //var posted = '<span calss="posted"><strong>' + data[i].postdate + '</strong></span>';
