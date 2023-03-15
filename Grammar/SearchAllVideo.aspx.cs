@@ -32,7 +32,8 @@ namespace Grammar
         }
         public void getData(string keyword)
         {
-            SqlConnection conn = new SqlConnection("data source=LAPTOP-J71QGUGU\\SQLEXPRESS; initial catalog =Video_data;integrated security=true");
+            //SqlConnection conn = new SqlConnection("data source=LAPTOP-J71QGUGU\\SQLEXPRESS; initial catalog =Video_data;integrated security=true");
+            SqlConnection conn = new SqlConnection("data source=DESKTOP-GPKL4Q4\\SQLEXPRESS; initial catalog =Video_data;integrated security=True");
             conn.Open();
             //Response.Write(keyword);
             var bindingwords = "'%" + keyword + "%'";

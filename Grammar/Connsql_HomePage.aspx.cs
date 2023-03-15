@@ -26,7 +26,8 @@ namespace Grammar
             // 跟資料庫要資料
             //建立資料庫連接
             //SqlConnection conn = new SqlConnection("data source=LAPTOP-J71QGUGU\\SQLEXPRESS; initial catalog =Video_data;integrated security=True");
-            SqlConnection conn = new SqlConnection("data source=DESKTOP-GPKL4Q4\\SQLEXPRESS; initial catalog =Video_data;integrated security=True");
+            //SqlConnection conn = new SqlConnection("data source=DESKTOP-GPKL4Q4\\SQLEXPRESS; initial catalog =Video_data;integrated security=True");
+            SqlConnection conn = new SqlConnection("data source=DESKTOP-GPKL4Q4\\MSSQLSERVER_2017; initial catalog =Video_data;integrated security=True");
             //SqlConnection conn = new SqlConnection("data source=DESKTOP-O23QA8S\\SQLEXPRESS; initial catalog = Video_data; integrated security=true;");
             //打開連接
             conn.Open();

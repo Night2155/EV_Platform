@@ -33,7 +33,8 @@ namespace Grammar {
         }
         public static string[] GetRecommendWord() {
 
-            string connect_command = @"Data Source = localhost; Initial Catalog = EnglishPlatform; Persist Security Info = True; User ID = sa; Password = 00123";
+            //string connect_command = @"Data Source = localhost; Initial Catalog = EnglishPlatform; Persist Security Info = True; User ID = sa; Password = 00123";
+            string connect_command = "data source=DESKTOP-GPKL4Q4\\SQLEXPRESS; initial catalog =EnglishPlatform;integrated security=True";
             SqlConnection connection = new SqlConnection(connect_command);
             string sql_command = "SELECT Top 7 Keys,Keys_eng FROM Grammer2 ORDER by times DESC";
             SqlCommand Command = new SqlCommand(sql_command, connection);
